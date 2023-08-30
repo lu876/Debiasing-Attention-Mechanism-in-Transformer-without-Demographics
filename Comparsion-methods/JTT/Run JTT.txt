@@ -1,0 +1,33 @@
+Code to run JTT
+
+python generate_downstream.py --exp_name "JTT-CelebA" --dataset "CelebA" --method ERM  (remove wandb command)
+
+bash results/CelebA/CelebA_sample_exp/ERM_upweight_0_epochs_50_lr_1e-05_weight_decay_0.1/job.sh
+
+python process_training.py --exp_name "JTT-CelebA" --dataset "CelebA" --folder_name 'ERM_upweight_0_epochs_50_lr_0.0001_weight_decay_0.0001' --lr 1e-5 --weight_decay 0.0001 --final_epoch 1 --deploy
+
+sbatch results/CelebA/CelebA_sample_exp/train_downstream_ERM_upweight_0_epochs_50_lr_1e-05_weight_decay_0.1/final_epoch1/JTT_upweight_50_epochs_50_lr_1e-05_weight_decay_0.1/job.sh
+
+
+
+
+
+
+
+python generate_downstream.py --exp_name "CelebA-ATT" --dataset "CelebA" --batch_size 128 --method ERM  (remove wandb command)
+
+python process_training.py --exp_name "CelebA-ATT" --dataset "CelebA" --folder_name 'ERM_upweight_0_epochs_50_lr_0.0001_weight_decay_0.0001' --lr 1e-5 --weight_decay 0.001 --final_epoch 1 --deploy
+
+
+
+
+#Example
+python generate_downstream.py --exp_name CelebA_sample_exp --dataset CelebA --n_epochs 10 --lr 1e-4 --weight_decay 1e-4 --method ERM
+
+bash results/CelebA/CelebA_sample_exp/ERM_upweight_0_epochs_50_lr_1e-05_weight_decay_0.1/job.sh
+
+python process_training.py --exp_name CelebA_sample_exp --dataset CelebA --folder_name ERM_upweight_0_epochs_50_lr_0.0001_weight_decay_0.0001 --lr 1e-04 --weight_decay 1e-04 --final_epoch 1 --deploy
+
+sbatch results/CelebA/CelebA_sample_exp/train_downstream_ERM_upweight_0_epochs_50_lr_1e-05_weight_decay_0.1/final_epoch1/JTT_upweight_50_epochs_50_lr_1e-05_weight_decay_0.1/job.sh
+
+python analysis.py --exp_name CelebA_sample_exp/train_downstream_ERM_upweight_0_epochs_50_lr_1e-05_weight_decay_0.1/final_epoch1/ --dataset CelebA
