@@ -32,7 +32,7 @@ This repository contains the implementation of "Debiasing Attention Mechanism in
     - **Automatic Download:** The `celebA_Ours_L.ipynb` notebook includes code in the first block that will automatically download and unzip the CelebA dataset into the correct directory. If you wish to use this option, you will need to uncomment the code in the first block and then run the first block. After downloading the dataset, remember to comment out the code again to prevent double downloading in future runs.
     - **Manual Download:** If you prefer to download the dataset manually, you can download the CelebA dataset and place it in the directory above the root of this repository. You may download CelebA from this [link](https://www.kaggle.com/datasets/jessicali9530/celeba-dataset)
 
-2. **Run the Main Notebook:** To execute ERM training, please run ``CelebA_ERM.ipynb``. To run our method, Execute the `celebA_Ours_L.ipynb` notebook. 
+2. **Run the Main Notebook:** To execute ERM training, please run ``CelebA_ERM.ipynb``. To run our method, Execute the `celebA_Ours.ipynb` notebook. 
 
 3. **Run Comparison Methods:** The comparison methods are located in the `Comparison-methods` directory.
 
